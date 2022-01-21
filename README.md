@@ -13,22 +13,22 @@ An sinnvollen Stellen kann JavaDoc hinzugefügt werden.
 
 technische Voraussetzungen:
 ---------------------------
-- IntelliJ oder Eclipse IDE
-- GIT  (optional)
-- Java ab Version 10
+- IDE (bevorzugt ist [IntelliJ IDEA Community Edition](https://www.jetbrains.com/de-de/idea/download/#section=windows))
+- Git (optional)
+- Java 17
 
 Shape Hierarchie
 ----------------
 Im nachfolgenden Diagramm wird die Vererbungsbeziehung von einigen Shapes
 dargestellt.
-Im Interface **Shape** werden die wichtigen Eigenschaften festgelegt , die alle Shapes 
+Im Interface **Shape** werden die wichtigen Eigenschaften festgelegt, die alle Shapes 
 gemeinsam haben. 
 In der abstrakten **InfoShape** Klasse wird die *info* Methode implementiert, 
-welche die im Interface festgelegten Template-Methoden(1. template) aufrufen kann um für 
+welche die im Interface **Shape** (siehe Link *1. template*) festgelegten Template-Methoden aufrufen kann um für 
 alle konkreten Shapes (Circle, Rectangle usw.) einen Beschreibungs-String im 
 JSON Format auszugeben. (links in der Grafik am Beispiel von **Rectangle** dargestellt) 
 
-![UML Diagramm](src/main/resources/UML.png) (2. UML Klassendiagramm)
+![UML Diagramm](src/main/resources/UML.png) (UML Klassendiagramm)
 
 Aufgabenstellung:
 -----------------
@@ -41,25 +41,26 @@ Unter-Packages
 - erstelle das Package "shapes" innerhalb des Base-Package
 - lege dieselben Packages unter "src/test/java" an.
 
-2. **programmieren der Shapes**  
-Setze die im Diagramm angegebene Klassenstruktur in JavaCode um. Nutze das "shapes"-Package für alle Klassen und Interfaces.
+2. **Programmieren der Shapes**  
+Setze die im Diagramm angegebene Klassenstruktur in Java-Code um. Nutze das "shapes"-Package für alle Klassen und Interfaces.
 - Die Interfacemethoden von **Shape** sind im Diagramm neben dem Interface aufgelistet.
-Beachte, daß die *name*-Methode im Interface als 'default' Methode auch implementiert wird.
-Es soll der simple Klassenname als String zurückgegeben werden (also *'Circle'* für die Klasse de.cgi.bootcamp.shapes.**Circle** )
+Beachte, dass die *name*-Methode im Interface als 'default' Methode auch implementiert wird.
+Es soll der simple Klassenname als String zurückgegeben werden (also *'Circle'* für die Klasse de.cgi.bootcamp.shapes.**Circle**)
 Hilfreich dafür ist eine Methode der Klasse **Class**
 - InfoShape implementiert das **Shape**-Interface nur teilweise, denn es wird dort nur die _Info_-Methode implementiert. 
 Unter Verwendung der Templatemethoden aus dem Interface soll ein JSON-formatierter String zurückgegeben werden, wie er am 
 Beispiel **Rectangle** links im Diagramm angegeben ist. Für die Ausgabe der _Double_-Werte soll auf zwei Nachkommastellen gerundet werden.
 - Die konkreten Shapes **Square**, **Rectangle** und **Circle** sollen als Datenobjekte umgesetzt werden. So sollen z.B. am Rechteck
-die Attribute Länge und Breite vom Typ *double* über einen Konstruktor initialisiert werden. 
+die Attribute Länge und Breite vom Typ *double* über einen Konstruktor initialisiert werden. Beim Kreis soll beispielsweise der Radius mit dem Typ *double*
+über einen Konstruktor initialisiert werden.
 - Bei der Umsetzung von *perimeter* und *area* gibt es mehrere Alternativen, die sich in Performance, Speicherbedarf und Einfachheit unterscheiden.
 Wäge ab und wähle eine Option durchgängig für alle Implementierungen. Erläutere deine Entscheidung kurz in einem Inline-Kommentar. 
-- erstelle eine **Shapes** Factory mit statischen Factorymethoden (3. factory) zum Erstellen aller konkreten Shapes:  
+- erstelle eine **Shapes** Factory mit statischen Factorymethoden (siehe Link *3. factory*) zum Erstellen aller konkreten Shapes:  
     z.B. *public static Rectangle rectangle(double x, double y){...}*  
-Es gibt mehrere Möglichkeiten, zu verhindern daß Instanzen dieser Factoryklasse angelegt werden können (4. instantiation ;) . Wähle eine Möglichkeit für die Umsetzung aus.
+Es gibt mehrere Möglichkeiten, zu verhindern dass Instanzen dieser Factoryklasse angelegt werden können (siehe Link *4. instantiation ;)*). Wähle eine Möglichkeit für die Umsetzung aus.
     
 3. **Tests**  
-In diesem Projekt wird absichtlich auf die Verwendung von TestFrameworks wie _TestNG_ oder _JUnit_ verzichtet, wir werden aber dennoch eine kleine Testanwendung schreiben. 
+In diesem Projekt wird absichtlich auf die Verwendung von Test-Frameworks wie _TestNG_ oder _JUnit_ verzichtet, wir werden aber dennoch eine kleine Testanwendung schreiben. 
 
 - Lege im von Dir erstellten Test-Package die Klasse **ShapeTest** an.
 - Wir wollen in diesem Test die berechneten Werte von _area_ und _perimeter_ überprüfen. Dazu legen wir zuerste eine Methode an,
@@ -102,7 +103,7 @@ soll vor jedem Durchlauf ein kurzes Menü ausgegeben werden:
 
 Zusatzaufgaben:
 ---------------
-- Erweitere die Klassen so, daß in der JSON Darstellung auch die Eingabeparameter (Länge, Breite etc.) des Shapes ausgegeben werden, wie in folgendem Beispiel:
+- Erweitere die Klassen so, dass in der JSON Darstellung auch die Eingabeparameter (Länge, Breite etc.) des Shapes ausgegeben werden, wie in folgendem Beispiel:
 ```json
 {   
     "type" : "Square",  
@@ -124,13 +125,3 @@ Dir folgenden Links dienen für die Erläuterung der oben angesprochenen Konzept
 3. (factory) <https://www.baeldung.com/java-constructors-vs-static-factory-methods>
 4. (instantiation ;) <http://lmgtfy.com/?q=prevent+instantiation+of+class>
 5. (JSON linter) <https://jsonlint.com/>
-
-Nachträge:
-----------
-Die folgenden Dinge wurden von Teilnehmern angesprochen. Ich versuche die Fragen hier zu klären, die befolgung der hier genannten Dinge hat aber keinen Einfluß auf die Bewertung.
-
-09.09.2019
-Q: Soll für 'circle' der Radius oder Durchmesser als Parameter angegeben werden?
-A: Nehmt bitte, wenn möglich den Radius.
-
-
