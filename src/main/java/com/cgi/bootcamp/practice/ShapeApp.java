@@ -1,10 +1,10 @@
 package com.cgi.bootcamp.practice;
 
-import com.cgi.bootcamp.practice.shapes.Shape;
+import com.cgi.bootcamp.practice.shapes.IShape;
 
-import static com.cgi.bootcamp.practice.shapes.Shapes.circle;
-import static com.cgi.bootcamp.practice.shapes.Shapes.rectangle;
-import static com.cgi.bootcamp.practice.shapes.Shapes.square;
+import static com.cgi.bootcamp.practice.shapes.ShapesFactory.circle;
+import static com.cgi.bootcamp.practice.shapes.ShapesFactory.rectangle;
+import static com.cgi.bootcamp.practice.shapes.ShapesFactory.square;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,13 +20,13 @@ public class ShapeApp {
 
 	public static void main(String[] args) {
 
-		List<Shape> shapes = new ArrayList<>();
-		shapes.add(square(5));
-		shapes.add(rectangle(3, 4));
-		shapes.add(circle(7));
+		List<IShape> shapes = new ArrayList<IShape>();
+		shapes.add(square(5d));
+		shapes.add(rectangle(3d, 4d));
+		shapes.add(circle(7d));
 
 		Optional<String> shapeSnippets = (Optional<String>) shapes.stream()
-				.map(Shape::info)
+				.map(com.cgi.bootcamp.practice.shapes.IShape::info)
 				.reduce((a, b) -> a + ",\n" + b);
 
 		shapeSnippets.ifPresent(snippets -> System.out.println("["+snippets+"]"));

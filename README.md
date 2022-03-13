@@ -38,14 +38,14 @@ Zuerst wird dieses Projekt um die nötigen Packages erweitert.
 - lege im src/main/java -Ordner folgendes Base-Package an: "com.cgi.bootcamp.practice". Alle 
 in diesem Projekt erstellten Klassen liegen in dem Base-Package oder in dort enthaltenen 
 Unter-Packages
-- erstelle das Package "shapes" innerhalb des Base-Package
+- erstelle das Package "IShapes" innerhalb des Base-Package
 - lege dieselben Packages unter "src/test/java" an.
 
 2. **Programmieren der Shapes**  
-Setze die im Diagramm angegebene Klassenstruktur in Java-Code um. Nutze das "shapes"-Package für alle Klassen und Interfaces.
+Setze die im Diagramm angegebene Klassenstruktur in Java-Code um. Nutze das "IShapes"-Package für alle Klassen und Interfaces.
 - Die Interfacemethoden von **Shape** sind im Diagramm neben dem Interface aufgelistet.
 Beachte, dass die *name*-Methode im Interface als 'default' Methode auch implementiert wird.
-Es soll der simple Klassenname als String zurückgegeben werden (also *'Circle'* für die Klasse de.cgi.bootcamp.shapes.**Circle**)
+Es soll der simple Klassenname als String zurückgegeben werden (also *'Circle'* für die Klasse de.cgi.bootcamp.IShapes.**Circle**)
 Hilfreich dafür ist eine Methode der Klasse **Class**
 - InfoShape implementiert das **Shape**-Interface nur teilweise, denn es wird dort nur die _Info_-Methode implementiert. 
 Unter Verwendung der Templatemethoden aus dem Interface soll ein JSON-formatierter String zurückgegeben werden, wie er am 
@@ -115,7 +115,7 @@ Zusatzaufgaben:
 }
 ```
 
-- Schreibe ein Main-Programm, welches die Liste (templates/shapes.txt) einliest und die Shapes einmal aufsteigend nach ihrer Fläche sortiert ausgibt und anschließend aufsteigend nach dem Umfang.
+- Schreibe ein Main-Programm, welches die Liste (templates/IShapes.txt) einliest und die Shapes einmal aufsteigend nach ihrer Fläche sortiert ausgibt und anschließend aufsteigend nach dem Umfang.
 
 Links  
 ---------
